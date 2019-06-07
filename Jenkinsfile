@@ -24,10 +24,10 @@ pipeline {
         }
 
 
-        stage ('Deployment Stage') {
+        stage ('Install Stage') {
             steps {
                 
-                    bat 'mvn deploy'
+                    bat 'mvn install'
                 
             }
         }
