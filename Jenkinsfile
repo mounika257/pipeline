@@ -18,7 +18,7 @@ pipeline {
 
             steps {
                 
-                    bat 'mvn test'
+                    sh 'mvn test'
                 
             }
         }
@@ -27,7 +27,7 @@ pipeline {
         stage ('Install Stage') {
             steps {
                 
-                    bat 'mvn install'
+                    sh 'mvn install'
                 
             }
         }
