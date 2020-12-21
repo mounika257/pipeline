@@ -3,15 +3,15 @@ pipeline {
 	tools {
         maven "MAVEN_HOME" 
     }
-       rtServer (
-    id: 'mounika.jfrog.io',
-    url: 'https://mounika.jfrog.io/artifactory',
-    // If you're using username and password:
-    username: 'mounikashetty111@gmail.com',
-    password: 'Saibaba@257',
-    // If you're using Credentials ID:
-    timeout: 300
-       )
+        rtServer (
+          id: 'mounika.jfrog.io',
+          url: 'https://mounika.jfrog.io/artifactory',
+          // If you're using username and password:
+          username: 'mounikashetty111@gmail.com',
+          password: 'Saibaba@257',
+          // If you're using Credentials ID:
+          timeout: 300
+           )
 
     stages {
         stage ('Compile Stage') {
