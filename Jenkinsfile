@@ -14,7 +14,7 @@ node {
     }
     
     stage('SonarQube Analysis') {
-        rtMaven.run pom: 'maven-example/pom.xml', goals: 'clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar -Dsonar.host.url=http://13.233.183.172:9000  -Dsonar.login=ad3acda93d498eac904596b6c61f71919eee29b2 '
+        rtMaven.run pom: 'maven-example/pom.xml', goals: 'clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar -Dsonar.host.url=http://13.235.134.41:9000/  -Dsonar.login=ad3acda93d498eac904596b6c61f71919eee29b2 '
      
          
       }
@@ -29,7 +29,7 @@ node {
      }
             
     stage ('Install') {
-        rtMaven.run pom: 'pom.xml', goals: 'install', buildInfo: buildInfo
+        rtMaven.run pom: 'pom.xml', goals: 'package', buildInfo: buildInfo
      }
  
     stage ('Deploy') {
