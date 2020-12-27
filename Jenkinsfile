@@ -14,7 +14,7 @@ node {
     }
     
     stage('SonarQube Analysis') {
-        rtMaven.run pom: 'maven-example/pom.xml', goals: 'clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar -Dsonar.host.url=http://13.235.134.41:9000/  -Dsonar.login=ad3acda93d498eac904596b6c61f71919eee29b2 '
+        rtMaven.run pom: 'pipeline/pom.xml', goals: 'clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar -Dsonar.host.url=http://13.235.134.41:9000/  -Dsonar.login=ad3acda93d498eac904596b6c61f71919eee29b2 '
      
          
       }
@@ -25,7 +25,7 @@ node {
         rtMaven.tool = 'MAVEN_HOME' // Tool name from Jenkins configuration
         rtMaven.deployer releaseRepo: 'example-repo-local', snapshotRepo: 'example-repo-local', server: server
         rtMaven.resolver releaseRepo: 'example-repo-local', snapshotRepo: 'example-repo-local', server: server
-        rtMaven.deployer.deployArtifacts = false // Disable artifacts deployment during Maven run
+        rtMaven.deployer.deployArtifacts = true // Disable artifacts deployment during Maven run
      }
             
     stage ('Install') {
