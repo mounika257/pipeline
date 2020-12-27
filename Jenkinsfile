@@ -8,7 +8,7 @@ node {
         git url: 'https://github.com/mounika257/pipeline.git'
     }
     stage ("sonar") {   
-         sh ' mvn package org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar ' +
+         sh ' mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar ' +
             ' -Dsonar.host.url=http://13.235.134.41:9000 ' +
             ' -Dsonar.login=ad3acda93d498eac904596b6c61f71919eee29b2 '
     }      
